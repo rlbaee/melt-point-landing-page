@@ -8,9 +8,11 @@
 
   --dark-background-color: #2b1b1b;
   --dark-text-color: #fff0e1;
+  --alt-background-color: #d9d9d9;
 
   --main-color: #ff6b1a;
   --accent-color: #ff3c00;
+  --accent-color2: #97dffc;
 }
 
 /* Main Styles */
@@ -23,19 +25,23 @@
 
 body {
   width: 100%;
+  background-color: var(--light-background-color);
 }
 
-body {
+/* First Screen */
+.first-screen-wrapper {
+  height: 100vh;
   background-image: url(images/background.png);
   background-repeat: no-repeat;
   background-size: cover;
 }
-
-/* First Screen */
-
 .wrapper {
   margin: 0 auto;
   max-width: 70%;
+}
+
+.first-screen {
+  height: 100vh;
 }
 
 nav {
@@ -53,6 +59,8 @@ nav a {
   color: var(--dark-text-color);
 }
 
+/* Underline effect */
+
 nav a:not(:first-of-type):not(:last-of-type)::after {
   content: "";
   position: absolute;
@@ -61,7 +69,7 @@ nav a:not(:first-of-type):not(:last-of-type)::after {
   bottom: -5px;
   left: 50%;
   transform: translateX(-50%);
-  background-color: #0075e2;
+  background-color: var(--accent-color2);
   transition: all 0.3s ease;
 }
 
@@ -70,6 +78,7 @@ nav a:not(:first-of-type):not(:last-of-type):hover::after {
 }
 
 .nav-button {
+  font-weight: 800;
   display: flex;
   height: 35px;
   border-radius: 15px;
@@ -81,10 +90,15 @@ nav a:not(:first-of-type):not(:last-of-type):hover::after {
   color: var(--light-text-color);
 }
 
-.hero h1 {
+h1 {
   font-weight: 900;
   font-size: 76px;
   color: var(--dark-text-color);
+}
+
+h3 {
+  font-size: 28px;
+  font-weight: 900;
 }
 
 .hero p {
@@ -94,7 +108,7 @@ nav a:not(:first-of-type):not(:last-of-type):hover::after {
   margin: 40px 0 40px 0;
 }
 
-.hero a {
+.hero .hero-button {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -108,4 +122,58 @@ nav a:not(:first-of-type):not(:last-of-type):hover::after {
   border-radius: 50px;
 }
 
-/* Second Screen */
+/* Campaign */
+
+#campaign {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+}
+
+#campaign h1 {
+  color: var(--light-text-color);
+}
+
+#campaign p {
+  font-size: 24px;
+  text-align: left;
+}
+
+#campaign .logos img {
+  padding: 0 10px;
+}
+
+#campaign .catch-a-breeze-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--accent-color2);
+  padding: 20px 50px;
+  text-decoration: none;
+  color: var(--light-text-color);
+  font-weight: 900;
+  font-size: 32px;
+  border-radius: 50px;
+}
+
+#pros {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+#pros .card {
+  display: flex;
+  flex-direction: column;
+  width: 20%;
+  background-color: var(--alt-background-color);
+  padding: 20px;
+}
+
+#pros img {
+  width: 30px;
+}
