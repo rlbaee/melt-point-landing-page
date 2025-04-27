@@ -22,12 +22,12 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Montserrat", sans-serif;
+  transition: all 0.5s ease;
 }
 
 html {
   scroll-behavior: smooth;
 }
-
 body {
   width: 100%;
   background-color: var(--light-background-color);
@@ -55,13 +55,14 @@ body {
 .first-screen {
   height: 100vh;
 }
-
+header {
+  margin-bottom: 200px;
+}
 nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 20px 0;
-  margin-bottom: 200px;
 }
 
 nav .hamburger {
@@ -184,14 +185,19 @@ h3 {
   margin: 40px 0 40px 0;
 }
 
+.hero {
+  width: 100%;
+  height: max-content;
+}
+
 .hero .hero-button {
   cursor: pointer;
-  box-sizing: content-box;
+  box-sizing: border-box;
   border: 1px solid rgba(0, 0, 0, 0);
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 400px;
+  width: max-content;
   background-color: var(--accent-color);
   padding: 20px 50px;
   text-decoration: none;
@@ -247,19 +253,19 @@ h3 {
 /* Pros */
 .cards {
   display: flex;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: stretch;
   gap: 1.25rem;
 }
 
 .cards .card {
+  min-width: 300px;
+  max-width: 300px;
   display: flex;
   flex-direction: column;
   background-color: var(--alt-background-color);
-  flex: 1;
   overflow: hidden;
-  width: auto;
   border: none;
   border-radius: 25px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
@@ -368,7 +374,6 @@ p.description {
   flex-direction: column;
   gap: 40px;
   width: 400px;
-  height: 450px;
   border: 1px solid black;
   border-radius: 25px;
   padding: 20px;
@@ -536,18 +541,89 @@ footer .bottom {
 }
 
 /* Media Queries */
-@media (width <= 1690px) {
+@media (width <= 1700px) {
   .wrapper {
     max-width: 90%;
   }
 }
 
-@media (width <= 1260px) {
+@media (width <= 1300px) {
   nav > a {
     display: none;
   }
 
   nav .hamburger {
     display: block;
+  }
+
+  footer .top {
+    flex-direction: column;
+    gap: 50px;
+  }
+}
+
+@media (width < 750px) {
+  h1 {
+    font-size: 50px;
+  }
+
+  h2 {
+    font-size: 40px;
+  }
+
+  h3 {
+    font-size: 30px;
+  }
+  h4 {
+    font-size: 20px;
+  }
+
+  .hero p {
+    font-size: 24px;
+  }
+
+  .hero .hero-button {
+    width: 100%;
+  }
+
+  #form .form-wrapper {
+    width: 100%;
+    flex-direction: column;
+    gap: 100px;
+  }
+
+  aside {
+    left: -100vw;
+  }
+
+  .background-wrapper .wrapper {
+    height: max-content;
+  }
+
+  header {
+    margin-bottom: 50px;
+  }
+
+  #pros .cards {
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 50px;
+  }
+
+  .cards .card {
+    width: 300px;
+  }
+
+  .people p {
+    font-size: 1rem !important;
+  }
+  a[href="#form"]:not(aside a):not(footer a):not(nav a) {
+    font-size: 20px !important;
+  }
+  input[type="submit"] {
+    font-size: 20px !important;
+  }
+  .connect {
+    width: 100%;
   }
 }
