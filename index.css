@@ -410,10 +410,9 @@ footer {
   display: flex;
   flex-direction: column;
   background-color: var(--dark-background-color);
-  padding: 30px 60px;
   gap: 30px;
   background-color: var(--dark-background-color);
-  padding: 30px 60px;
+  padding: 30px 30px;
 }
 
 h4,
