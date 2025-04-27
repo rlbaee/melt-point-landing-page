@@ -29,17 +29,19 @@ body {
   background-color: var(--light-background-color);
 }
 
-/* First Screen */
-.first-screen-wrapper {
+/* First screen */
+.background-wrapper {
   height: 100vh;
   background-image: url(images/background.png);
   background-repeat: no-repeat;
   background-size: cover;
+  margin-bottom: 50px;
 }
+
 .wrapper {
   display: flex;
   flex-direction: column;
-  margin: 0 auto;
+  margin: 0 auto 50px auto;
   max-width: 70%;
   gap: 50px;
 }
@@ -86,13 +88,18 @@ nav a:not(:first-of-type):not(:last-of-type):hover::after {
   font-weight: 800;
   display: flex;
   height: 35px;
-  border-radius: 15px;
-  border: none;
+  border-radius: 50px;
+  border: 1px solid rgba(0, 0, 0, 0);
   padding: 10px 20px;
   background-color: var(--accent-color);
   justify-content: center;
   align-items: center;
   color: var(--light-text-color);
+  transition: all 0.3s ease;
+}
+
+.nav-button:hover {
+  border: 1px solid var(--dark-text-color);
 }
 
 h1 {
@@ -124,6 +131,7 @@ h3 {
 .hero .hero-button {
   cursor: pointer;
   box-sizing: content-box;
+  border: 1px solid rgba(0, 0, 0, 0);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -135,6 +143,11 @@ h3 {
   font-weight: 900;
   font-size: 32px;
   border-radius: 50px;
+  transition: all 0.3s ease;
+}
+
+.hero .hero-button:hover {
+  border: 1px solid var(--dark-text-color);
 }
 
 /* Campaign */
@@ -258,7 +271,7 @@ p.description {
   border: 1px solid black;
   border-radius: 25px;
   background-color: var(--light-background-color);
-  font-size: 1em;
+  font-size: 1rem;
   padding: 0 20px;
 }
 
@@ -267,7 +280,7 @@ p.description {
   border: 1px solid black;
   border-radius: 25px;
   background-color: var(--light-background-color);
-  font-size: 1em;
+  font-size: 1rem;
   padding: 20px;
   resize: none;
 }
@@ -283,7 +296,7 @@ p.description {
   cursor: pointer;
 }
 
-.reviews {
+#reviews {
   display: flex;
   flex-direction: column;
   gap: 40px;
@@ -294,7 +307,7 @@ p.description {
   padding: 20px;
 }
 
-.reviews h3 {
+#reviews h3 {
   text-align: center;
 }
 
@@ -306,11 +319,116 @@ p.description {
 
 .stars * {
   color: var(--accent-color);
-  font-size: 1.5em;
+  font-size: 1.5rem;
 }
 
-.team .people {
+#team .people {
   display: flex;
   flex-direction: column;
   gap: 15px;
+}
+
+#team .people p {
+  font-size: 24px;
+}
+
+/* Footer */
+footer {
+  background-color: var(--dark-background-color);
+  padding: 30px 60px;
+}
+
+h4,
+footer a,
+footer p {
+  color: var(--dark-text-color);
+}
+
+footer p,
+a {
+  line-height: 30px;
+}
+
+footer h4 {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 35px;
+}
+
+footer .top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  height: 100%;
+}
+
+footer .top #partners {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  flex: 1;
+}
+
+footer .top #contacts {
+  flex: 1;
+}
+
+.logos {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
+}
+
+.logos img {
+  max-width: 80px;
+}
+
+footer .top .info {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.info a {
+  text-decoration: underline;
+  text-decoration-color: rgba(0, 0, 0, 0);
+  transition: all 0.3s ease;
+}
+
+.info a:hover {
+  text-decoration: underline;
+  text-decoration-color: var(--dark-text-color);
+}
+
+footer .top .try-now {
+  flex: 1.5;
+}
+
+.try-now {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.try-now a {
+  text-align: center;
+  background-color: var(--accent-color);
+  border: 1px solid var(--light-text-color);
+  padding: 20px 50px;
+  border-radius: 50px;
+  text-decoration: none;
+  color: var(--light-text-color);
+  font-weight: 900;
+  font-size: 32px;
+  transition: all 0.3s ease;
+}
+
+.try-now a:hover {
+  border: 1px solid var(--dark-text-color);
+}
+
+.try-now p {
+  color: rgba(255, 240, 225, 0.5);
+  line-height: 1.5rem;
 }
