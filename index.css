@@ -20,6 +20,7 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
   font-family: "Montserrat", sans-serif;
 }
 
@@ -36,8 +37,11 @@ body {
   background-size: cover;
 }
 .wrapper {
+  display: flex;
+  flex-direction: column;
   margin: 0 auto;
   max-width: 70%;
+  gap: 50px;
 }
 
 .first-screen {
@@ -78,6 +82,7 @@ nav a:not(:first-of-type):not(:last-of-type):hover::after {
 }
 
 .nav-button {
+  box-sizing: content-box;
   font-weight: 800;
   display: flex;
   height: 35px;
@@ -96,6 +101,14 @@ h1 {
   color: var(--dark-text-color);
 }
 
+h2 {
+  font-weight: 900;
+  font-size: 72px;
+  color: var(--light-text-color);
+  text-align: center;
+  margin-bottom: 30px;
+}
+
 h3 {
   font-size: 28px;
   font-weight: 900;
@@ -109,6 +122,8 @@ h3 {
 }
 
 .hero .hero-button {
+  cursor: pointer;
+  box-sizing: content-box;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -129,11 +144,6 @@ h3 {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  gap: 20px;
-}
-
-#campaign h1 {
-  color: var(--light-text-color);
 }
 
 #campaign p {
@@ -143,6 +153,7 @@ h3 {
 
 #campaign .logos img {
   padding: 0 10px;
+  margin: 20px 0;
 }
 
 #campaign .catch-a-breeze-button {
@@ -158,22 +169,148 @@ h3 {
   border-radius: 50px;
 }
 
-#pros {
+/* Pros */
+.cards {
   display: flex;
   flex-wrap: nowrap;
   justify-content: center;
-  align-items: center;
+  align-items: stretch;
+  gap: 1.25rem;
+}
+
+.cards .card {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--alt-background-color);
+  flex: 1;
+  overflow: hidden;
+  width: auto;
+  border: none;
+  border-radius: 25px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.cards .card img {
+  width: 100%;
+  height: 130px;
+  object-fit: cover;
+  display: block;
+  padding: 0;
+  margin: 0;
+}
+
+.cards .card h3,
+.cards .card p {
+  margin: 0 20px;
+  flex-grow: 1;
+}
+
+.cards .card h3 {
+  margin-top: 2rem;
+}
+
+.cards .card p {
+  font-weight: 300;
+  margin-bottom: 2rem;
+}
+
+.cards .card h3 {
+  text-align: center;
+}
+
+p.description {
+  text-align: center;
+  font-style: italic;
+  font-weight: 300;
+}
+
+/* Form */
+#form {
+  display: flex;
+  flex-direction: column;
+}
+
+#form .form-wrapper {
+  display: flex;
+  justify-content: space-between;
+  gap: 200px;
+}
+
+#form .form-wrapper > * {
+  width: 100%;
+}
+
+.connect {
+  display: flex;
+  justify-content: flex-start;
+  width: 400px;
+}
+
+.connect form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
   gap: 20px;
 }
 
-#pros .card {
+.connect form input[id="small"] {
+  height: 35px;
+  border: 1px solid black;
+  border-radius: 25px;
+  background-color: var(--light-background-color);
+  font-size: 1em;
+  padding: 0 20px;
+}
+
+.connect form textarea {
+  height: 180px;
+  border: 1px solid black;
+  border-radius: 25px;
+  background-color: var(--light-background-color);
+  font-size: 1em;
+  padding: 20px;
+  resize: none;
+}
+
+.connect form input[type="submit"] {
+  height: 80px;
+  border: none;
+  border-radius: 50px;
+  background-color: var(--accent-color2);
+  font-weight: 900;
+  font-size: 28px;
+  padding: 20px;
+  cursor: pointer;
+}
+
+.reviews {
   display: flex;
   flex-direction: column;
-  width: 20%;
-  background-color: var(--alt-background-color);
+  gap: 40px;
+  width: 400px;
+  height: 450px;
+  border: 1px solid black;
+  border-radius: 25px;
   padding: 20px;
 }
 
-#pros img {
-  width: 30px;
+.reviews h3 {
+  text-align: center;
+}
+
+.stars {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.stars * {
+  color: var(--accent-color);
+  font-size: 1.5em;
+}
+
+.team .people {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
 }
