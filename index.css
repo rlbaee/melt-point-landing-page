@@ -24,6 +24,10 @@
   font-family: "Montserrat", sans-serif;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   width: 100%;
   background-color: var(--light-background-color);
@@ -45,6 +49,7 @@ body {
   margin: 0 auto 50px auto;
   max-width: 70%;
   gap: 50px;
+  transition: all 0.5s ease;
 }
 
 .first-screen {
@@ -66,7 +71,50 @@ nav .hamburger {
   color: var(--dark-text-color);
 }
 
-nav a {
+#hamburger-icon {
+  display: none;
+}
+
+aside {
+  position: fixed;
+  top: 0;
+  left: -50vw;
+  width: max-content;
+  height: 100vh;
+  background-color: var(--dark-background-color);
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 20px 50px 20px 20px;
+  transition: left 0.5s ease;
+}
+
+#hamburger-icon:checked ~ aside {
+  left: 0;
+}
+
+#hamburger-icon {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+  pointer-events: none;
+}
+
+aside a {
+  text-decoration-color: rgba(0, 0, 0, 0);
+  color: var(--dark-text-color);
+  transition: all 0.3s ease;
+  font-size: 1.5rem;
+}
+
+aside a:hover {
+  text-decoration: underline;
+  text-decoration-color: var(--dark-text-color);
+}
+
+nav > a {
   position: relative;
   font-weight: bold;
   text-decoration: none;
@@ -75,7 +123,7 @@ nav a {
 
 /* Underline effect */
 
-nav a:not(:first-of-type):not(:last-of-type)::after {
+nav > a:not(:first-of-type):not(:last-of-type)::after {
   content: "";
   position: absolute;
   height: 2px;
@@ -87,7 +135,7 @@ nav a:not(:first-of-type):not(:last-of-type)::after {
   transition: all 0.3s ease;
 }
 
-nav a:not(:first-of-type):not(:last-of-type):hover::after {
+nav > a:not(:first-of-type):not(:last-of-type):hover::after {
   width: 60%;
 }
 
@@ -495,7 +543,7 @@ footer .bottom {
 }
 
 @media (width <= 1260px) {
-  nav a {
+  nav > a {
     display: none;
   }
 
