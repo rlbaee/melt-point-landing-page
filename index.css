@@ -619,6 +619,7 @@ footer .bottom {
   }
   a[href="#form"]:not(aside a):not(footer a):not(nav a) {
     font-size: 20px !important;
+    width: 100%;
   }
   input[type="submit"] {
     font-size: 20px !important;
